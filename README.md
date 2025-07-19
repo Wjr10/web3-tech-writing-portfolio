@@ -21,10 +21,3 @@ I'm **Gambo Wadams Zakka**, a Web3 technical writer passionate about blockchain 
 - 🔗 GitHub: [@Wjr10](https://github.com/Wjr10)
 - 📧 Email: gbzakka@gmail.com
 
----
-
-## 🚀 What's Next?
-
-- ✅ Publish more beginner tutorials  
-- ✅ Add visuals and diagrams (coming soon)  
-- 🛠️ Expand to smart contracts, NFT metadata, wallets, and DApps  
