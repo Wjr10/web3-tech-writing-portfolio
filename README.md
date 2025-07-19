@@ -19,13 +19,12 @@ More guides coming soon on topics like smart contracts, NFTs, and DeFi tools.
 I'm **Gambo Wadams Zakka**, a Web3 technical writer passionate about blockchain education. My goal is to help everyday users explore Web3 with confidence and clarity.
 
 - 🔗 GitHub: [@Wjr10](https://github.com/Wjr10)
-- 📧 Email: gambowadams@gmail.com
+- 📧 Email: gbzakka@gmail.com
 
 ---
 
 ## 🚀 What's Next?
 
-- ✅ Publish more beginner tutorials
-- ✅ Add visuals and diagrams (coming soon)
-- 🛠️ Expand to smart contracts, NFT metadata, wallets, and DApps
-
+- ✅ Publish more beginner tutorials  
+- ✅ Add visuals and diagrams (coming soon)  
+- 🛠️ Expand to smart contracts, NFT metadata, wallets, and DApps  
