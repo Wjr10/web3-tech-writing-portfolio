@@ -1,58 +1,52 @@
 # How to Read a Smart Contract ABI
 
-Smart contracts are the building blocks of decentralized applications (dApps). To interact with these contracts, especially via scripts or Web3 frontends, we use something called the **ABI** — Application Binary Interface.
+The Application Binary Interface (ABI) defines how to interact with a smart contract on the Ethereum blockchain. It acts as the bridge between the contract and external applications.
 
-## 🧠 What is an ABI?
+## Why ABI Matters
 
-The **ABI** is essentially a description of how to interact with a smart contract on Ethereum. It defines:
-- The **functions** a contract exposes (e.g., `transfer`, `balanceOf`)
-- The **parameters** these functions accept
-- The **outputs** they return
-- Whether the function changes the blockchain state or is read-only
+Smart contracts are compiled into bytecode, which is unreadable by humans. The ABI provides a human-readable interface that outlines:
 
-If you think of the smart contract as a machine, the ABI is the manual.
+- Functions available in the contract
+- Function names and inputs/outputs
+- Events emitted
+- Variable types
 
-## 🔍 Where to Find the ABI on Etherscan
+## Where to Find an ABI
 
-Let’s say we want to inspect the ABI of a deployed contract, such as a popular ERC-20 token.
+To find a contract's ABI on Etherscan:
 
-1. Go to [https://etherscan.io](https://etherscan.io).
-2. Paste the contract address into the search bar.
-3. Navigate to the **Contract** tab.
-4. Scroll down to the **Contract ABI** section.
+1. Search for the contract address on [Etherscan.io](https://etherscan.io/).
+2. Scroll to the **Contract** tab.
+3. Under **Contract ABI**, click the **Copy** icon.
 
-![ABI Location on Etherscan](https://raw.githubusercontent.com/Wjr10/web3-tech-writing-portfolio/main/assets/abi-location.png)
+> 🔍 Tip: If the contract is verified, the ABI will be publicly available.
 
-Click **"Copy"** to save the entire ABI to your clipboard for use in your dApp, script, or Web3 library.
+## How to Read the ABI Structure
 
-## 🧩 Understanding the ABI Structure
-
-Here’s a short sample from a contract ABI:
+An ABI is a JSON array of function and event descriptors. Here's an example of a `transfer` function in an ABI:
 
 ```json
-[
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "recipient",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "transfer",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  }
-]
+{
+  "inputs": [
+    {
+      "internalType": "address",
+      "name": "recipient",
+      "type": "address"
+    },
+    {
+      "internalType": "uint256",
+      "name": "amount",
+      "type": "uint256"
+    }
+  ],
+  "name": "transfer",
+  "outputs": [
+    {
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+    }
+  ],
+  "stateMutability": "nonpayable",
+  "type": "function"
+}
