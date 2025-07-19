@@ -1,60 +1,58 @@
 # How to Read a Smart Contract ABI
 
-In Web3 development, the Application Binary Interface (ABI) is essential for interacting with smart contracts. An ABI defines the contract's functions, events, and how to encode/decode data when communicating with it from a frontend or script.
+Smart contracts are the building blocks of decentralized applications (dApps). To interact with these contracts, especially via scripts or Web3 frontends, we use something called the **ABI** — Application Binary Interface.
 
-This guide explains what an ABI is, how to find one on [Etherscan](https://etherscan.io), and how to read and interpret its structure.
+## 🧠 What is an ABI?
 
----
+The **ABI** is essentially a description of how to interact with a smart contract on Ethereum. It defines:
+- The **functions** a contract exposes (e.g., `transfer`, `balanceOf`)
+- The **parameters** these functions accept
+- The **outputs** they return
+- Whether the function changes the blockchain state or is read-only
 
-## 📌 What is an ABI?
+If you think of the smart contract as a machine, the ABI is the manual.
 
-An **ABI (Application Binary Interface)** is a JSON file that describes the interface of a smart contract — including its:
+## 🔍 Where to Find the ABI on Etherscan
 
-- **Functions** (e.g., `transfer`, `approve`)
-- **Inputs/Outputs** for each function
-- **Events**
-- **Mutability** (e.g., `view`, `nonpayable`, `payable`)
+Let’s say we want to inspect the ABI of a deployed contract, such as a popular ERC-20 token.
 
-ABIs allow Web3 libraries like **Web3.js**, **Ethers.js**, or **web3.py** to know *how* to communicate with the contract deployed on the blockchain.
+1. Go to [https://etherscan.io](https://etherscan.io).
+2. Paste the contract address into the search bar.
+3. Navigate to the **Contract** tab.
+4. Scroll down to the **Contract ABI** section.
 
----
+![ABI Location on Etherscan](https://raw.githubusercontent.com/Wjr10/web3-tech-writing-portfolio/main/assets/abi-location.png)
 
-## 🔍 How to Locate the ABI on Etherscan
+Click **"Copy"** to save the entire ABI to your clipboard for use in your dApp, script, or Web3 library.
 
-To view a smart contract’s ABI:
+## 🧩 Understanding the ABI Structure
 
-1. Visit [https://etherscan.io](https://etherscan.io)
-2. Enter the **contract address** in the search bar
-3. Click the **"Contract"** tab
-4. Scroll to the **"Code"** section
-5. Locate the **"Contract ABI"** block — usually a long JSON array
-
-![ABI section on Etherscan](https://raw.githubusercontent.com/Wjr10/web3-tech-writing-portfolio/main/assets/abi-location.png)
-
-You can click the "Copy ABI to clipboard" button to use it in your code.
-
----
-
-## 🧠 How to Read an ABI (Example Explained)
-
-Here’s a simplified ABI snippet for a `transfer` function:
+Here’s a short sample from a contract ABI:
 
 ```json
-{
-  "inputs": [
-    {
-      "internalType": "address",
-      "name": "recipient",
-      "type": "address"
-    },
-    {
-      "internalType": "uint256",
-      "name": "amount",
-      "type": "uint256"
-    }
-  ],
-  "name": "transfer",
-  "outputs": [],
-  "stateMutability": "nonpayable",
-  "type": "function"
-}
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "transfer",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
